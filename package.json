@@ -1,0 +1,29 @@
+{
+  "name": "bowling_kata",
+  "version": "1.0.0",
+  "description": "This is a Node app that uses vanilla ES6 and Jest for testing.",
+  "main": "bowling.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "jest": "^22.1.4"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtburnett/bowling_kata.git"
+  },
+  "author": "Mike Burnett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtburnett/bowling_kata/issues"
+  },
+  "homepage": "https://github.com/mtburnett/bowling_kata#readme"
+}

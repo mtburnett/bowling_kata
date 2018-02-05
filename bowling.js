@@ -1,5 +1,4 @@
-class BowlingGame {
-    // assumes score is in format 'X 9/ 81 9- 9/ X X 9- 8/ X X 72' e.g.
+export default class BowlingGame {
     constructor(score) {
         this.total = 0;
         // make an array of rolls out of the score string input
@@ -36,7 +35,10 @@ class BowlingGame {
                 // no bonus
             } else {
                 // spare bonus
-                if (this.rolls[index - 1] === '/') {
+                if (
+                    (this.rolls[index - 1] === '/') &&
+                    (index < 19)
+                 ) {
                     if (roll === 'X') {
                         this.total += 10;
                     } else {
@@ -48,7 +50,6 @@ class BowlingGame {
                     (this.rolls[index - 2] === 'X') || 
                     (this.rolls[index - 3] === 'X')
                 ) {
-                    console.log('adding strike bonus');
                     if (roll === 'X') {
                         this.total += 10;
                     } else if (roll === '/') {
@@ -63,7 +64,6 @@ class BowlingGame {
                     (this.rolls[index - 4] === 'X') || 
                     (this.rolls[index - 5] === 'X')
                 ) {
-                    console.log('adding strike bonus');
                     if (roll === 'X') {
                         this.total += 10;
                     } else if (roll === '/') {
@@ -73,15 +73,7 @@ class BowlingGame {
                     }
                 }
             }
-            console.log(index, roll, this.total);
         });
     } 
 }
-
-// const game = new BowlingGame('X 9/ 81 9- 9/ X X 9- 8/ X X X');
-const game = new BowlingGame('X X X X X X X X X X X X');
-// const game = new BowlingGame('9- 9- 9- 9- 9- 9- 9- 9- 9- 9-');
-// const game = new BowlingGame('5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5');
-
-console.log(game.total);
 
